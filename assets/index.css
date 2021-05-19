@@ -1,0 +1,248 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Tamma+2&family=Roboto:wght@100&family=Ubuntu:wght@300&display=swap');
+* {
+    padding: 0px;
+    margin: 0px;
+}
+body{
+    overflow-x:hidden;
+    font-family: 'Ubuntu', sans-serif!important;
+    margin-bottom: 2rem;
+}
+h4{
+    font-size:18px;
+}
+h5{
+    font-size:20px;
+}
+p{
+    color: #676f77;
+    font-weight: 600;
+}
+#covid-19-india,
+#covid19state{
+     font-size:25px;
+    }
+#Confirmed,
+#Recovered,
+#Deceased,
+#Active,
+#daily-confirmed,
+#daily-recovered,
+#daily-deceased,
+#daily-active{
+    height:250px;
+    margin-top: 2em;
+}
+#table td.cell--selected, td.focused {
+    background: #f8d8d5!important;
+}
+
+#all-data-cases{
+    display: flex;
+    justify-content: space-around;
+}
+.card {
+    border: none;
+    height: 235px;
+}
+#covid-confirmed{
+    cursor: pointer;
+    background: #f9e0e5;
+}
+
+#covid-confirmed h4,
+#covid-confirmed h5{
+    color:#e83039;
+}
+#covid-active{
+    cursor: pointer;
+    background: #f0f6fe;
+}
+#covid-active h4,
+#covid-active h5{
+    color:#237bfa;
+}
+#covid-recovered{
+    cursor: pointer;
+    background: #e4f4e7;
+}
+#covid-recovered h4,
+#covid-recovered h5{
+    color:#53a844;
+}
+#covid-death{
+    cursor: pointer;
+    background: #f6f6f7;
+}
+#covid-death h4,
+#covid-death h5{
+    color:#798189;
+}
+#all-state-table{
+    padding-right: 300px;
+    padding-left: 300px;
+}
+table{
+    width: 100%;
+}
+#total-corona-cases{
+     padding-right: 150px!important;
+    padding-left: 150px!important;
+}
+#totalcases,
+#table{
+    padding-right: 150px;
+    padding-left: 150px;
+}
+/* #totalcases{
+    width: 25%;
+    right: auto;
+    left: 100%;
+    -webkit-transform: translate(-50%, 0);
+    -o-transform: translate(-50%, 0);
+    transform: translate(150%, 0);
+} */
+
+#covid-19-india{
+    font-weight: 600;
+    color: #6c757d;
+    margin-bottom: 0;}
+#covid19state{
+   color: cornflowerblue;
+   font-weight: 600;
+}
+.badge-danger {
+    color: #fff;
+    padding: 10px;
+    background-color: #dc3545;
+    font-size: 15px;
+    cursor:pointer;
+}
+label {
+ margin-left: 10px;
+ margin-right: 10px;
+}
+input[type=radio] {
+   margin: 0px 5px 0 0;
+}
+@media screen and (max-width: 1120px){
+#total-corona-cases {
+    padding-right: 150px!important;
+    padding-left: 150px!important;
+}
+#all-state-table{
+    padding-right: 150px;
+    padding-left: 150px;
+}
+.card {
+    border: none;
+    height: 200px;
+}
+}
+@media screen and (max-width: 900px){
+#total-corona-cases {
+    padding-right: 90px!important;
+    padding-left: 90px!important;
+}
+.card-body h6 div{
+   width:80%!important;
+}
+}
+@media screen and (max-width: 777px){
+.col-sm-6 {
+    max-width: 25%;
+}
+.card-body {
+    padding: 10px;
+    }
+.card-body h4 {
+        font-size: 19px;
+    }
+.card-body h5 {
+        font-size: 16px;
+    }
+}
+@media screen and (max-width: 768px){
+#all-state-table{
+    padding-right: 100px;
+    padding-left: 100px;
+}
+#total-corona-cases {
+    padding-right: 110px!important;
+    padding-left: 110px!important;
+}
+.card {
+    border: none;
+    height: 175px!important;
+}
+#table {
+    padding-right: 100px;
+    padding-left: 100px;
+}
+  
+}
+
+@media screen and (max-width: 700px){
+#total-corona-cases {
+    padding-right: 17px!important;
+    padding-left: 17px!important;
+}
+.card-body h6 div{
+    width:100%!important;
+}
+}
+
+
+@media screen and (max-width:575px){
+h4{
+font-size:16px;
+}
+h5{
+    font-size:19px;
+}
+#all-state-table{
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.card {
+    margin: 2px!important;
+    border: none;
+    height:165px!important;;
+}
+.card-body {
+    padding: 4px!important;
+}
+.card-body h4{
+    margin-top: 10px;
+    font-size: 15px!important;
+}
+.card-body h5{
+    margin-top: 10px;
+    font-size: 13px!important;
+}
+.col-sm-6{
+   padding: 0!important;
+   width: 25%;
+    }
+#Confirmed,#Recovered,#Deceased,#Active{
+    height:210px;
+}
+    
+#covid-19-india,
+#covid19state{
+     font-size:20px;
+    }
+    
+#total-cases-chart,
+#today-cases-chart,
+#totalcases, 
+#table{
+    padding-right:15px!important;
+    padding-left:15px!important;
+}
+#pie_chart,
+#pie_chart_daily{
+    height: 300px;
+    }
+
+}
