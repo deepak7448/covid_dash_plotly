@@ -1,4 +1,5 @@
 import dash
+import time
 import pandas as pd
 import plotly.express as px
 import plotly.graph_objects as go
@@ -12,7 +13,7 @@ from dateutil.relativedelta import *
 from dash_extensions import Lottie 
 
 scripts = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML" 
-app = dash.Dash(__name__,external_stylesheets=[dbc.themes.BOOTSTRAP],external_scripts=[scripts],
+app = dash.Dash(__name__,title='Covid Dash',external_stylesheets=[dbc.themes.BOOTSTRAP],external_scripts=[scripts],
      meta_tags=[{"name": "viewport", "content": "width=device-width, initial-scale=1, shrink-to-fit=no"}])    
 server = app.server
 
@@ -101,7 +102,9 @@ Deceased = all_state[Deceased]
 
 
 
-app.layout = html.Div([
+app.layout = dcc.Loading(
+    children=[
+    html.Div([
     html.H3(["Covid19"],id='covid-19-india',className="text-center mt-4"),
     html.H3(id='covid19state',className="text-center mb-3"),
     html.Div([
@@ -140,6 +143,7 @@ app.layout = html.Div([
     html.Div([
     dbc.Button("Show/Hide All States",id="collapse-button",color="primary",),],className="mt-1 text-center"),
     html.Div([
+   
     #table_chart
     dbc.Collapse(
         dbc.Col([dbc.Table([
@@ -172,6 +176,7 @@ app.layout = html.Div([
                          {'label': 'Daily', 'value': 'Daily'}],
                 value='cumulative',
             )],className='text-center mt-3'),
+        
         #Cumulative_corona_cases         
         #pie_chat
         html.Div([
@@ -192,7 +197,7 @@ app.layout = html.Div([
         ],lg=6,md=6,sm=12,className='layout_chart'),
         dbc.Col([
             dcc.Graph(id='Deceased', config={'displayModeBar': False})
-        ],lg=6,md=6,sm=12,className='layout_chart'),])],lg=7,md=12,sm=12,id="total-case-chart"),])],id='Cumulative_cases',className="ml-4 mr-4"),
+        ],lg=6,md=6,sm=12,className='layout_chart'),])],lg=7,md=12,sm=12,id="total-case-chart"),])],id='Cumulative_cases'),
         
         #daily_corona_cases
         html.Div([
@@ -213,9 +218,11 @@ app.layout = html.Div([
         ],lg=6,md=6,sm=12,className='layout_chart'),
         dbc.Col([
             dcc.Graph(id='daily-deceased', config={'displayModeBar': False})
-        ],lg=12,md=12,sm=12,className='layout_chart'),])],lg=7,md=12,sm=12,id="today-case-chart",)])],id='Daily_cases',className="ml-4 mr-4")
+        ],lg=12,md=12,sm=12,className='layout_chart'),])],lg=7,md=12,sm=12,id="today-case-chart",)])],id='Daily_cases')
     ])
 ])
+
+],type="circle", fullscreen=True,)
 
 #table_show_hide
 @app.callback(
@@ -224,7 +231,9 @@ app.layout = html.Div([
     [State("collapse", "is_open")])
 def toggle_collapse(n, is_open):
     if n:
+        time.sleep(1)
         return not is_open
+    time.sleep(1)
     return is_open
 
 @app.callback(
@@ -499,6 +508,7 @@ def Death_update_output(totalcases):
     fig.add_annotation(text="Death",xref="paper", yref="paper",x=0.01,y=0.99 ,showarrow=False,font=dict(size=13,))
     return fig
 
+#options_button
 @app.callback(
     Output('Daily_cases', 'style'),
     Output('Cumulative_cases', 'style'),
@@ -507,9 +517,11 @@ def toggle_container(toggle_value):
     #print(toggle_value, flush=True)
     if toggle_value == 'Daily':
         dialy_cases =[{'display': 'block'},{'display': 'none'}]
+        time.sleep(2)
         return dialy_cases
     else:
         cumulative_cases =[{'display': 'none'},{'display': 'block'}]
+        time.sleep(2)
         return cumulative_cases
     
 if __name__ == '__main__':
