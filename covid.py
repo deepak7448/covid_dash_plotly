@@ -45,6 +45,8 @@ table_df = table_df[['State','Confirmed','Recovered','Deaths','Active','Delta_Co
 table_covid_data = table_df.groupby(['State'],as_index=False)[['Confirmed','Recovered','Deaths','Active']].sum()
 table_covid =table_covid_data.sort_values(by=["Confirmed"],ascending=[False])
 table_covid['State'][0:1]='India'
+
+#cases_format
 table_covid['Confirmed'] =table_covid.apply(lambda confirmed:"{:,}".format(confirmed['Confirmed']),axis=1)
 table_covid['Recovered'] =table_covid.apply(lambda recovered:"{:,}".format(recovered['Recovered']),axis=1)
 table_covid['Deaths'] =table_covid.apply(lambda deaths:"{:,}".format(deaths['Deaths']),axis=1)
@@ -99,9 +101,7 @@ Confirmed = all_state[Confirmed]
 Recovered = all_state[Recovered]
 Deceased = all_state[Deceased]
 
-
-
-
+#app_layout_or_visualization
 app.layout = dcc.Loading(
     children=[
     html.Div([
