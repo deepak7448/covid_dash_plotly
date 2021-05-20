@@ -517,11 +517,11 @@ def toggle_container(toggle_value):
     #print(toggle_value, flush=True)
     if toggle_value == 'Daily':
         dialy_cases =[{'display': 'block'},{'display': 'none'}]
-        time.sleep(2)
+        time.sleep(1)
         return dialy_cases
     else:
         cumulative_cases =[{'display': 'none'},{'display': 'block'}]
-        time.sleep(2)
+        time.sleep(1)
         return cumulative_cases
     
 if __name__ == '__main__':
